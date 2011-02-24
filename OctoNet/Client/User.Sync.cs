@@ -1,15 +1,15 @@
 ﻿#if WINDOWS_PHONE
 //Exclude
 #else
-using DropNet.Models;
+using OctoNet.Models;
 using RestSharp;
-using DropNet.Authenticators;
+using OctoNet.Authenticators;
 using System.Net;
-using DropNet.Helpers;
+using OctoNet.Helpers;
 
-namespace DropNet
+namespace OctoNet
 {
-    public partial class DropNetClient
+    public partial class OctoNetClient
     {
 
         public UserLogin Login(string email, string password)
@@ -37,7 +37,7 @@ namespace DropNet
 
         public AccountInfo Account_Info()
         {
-            //This has to be here as Dropbox change their base URL between calls
+            //This has to be here as Octopart change their base URL between calls
             _restClient.BaseUrl = Resource.ApiBaseUrl;
             _restClient.Authenticator = new OAuthAuthenticator(_restClient.BaseUrl, _apiKey, _appsecret, _userLogin.Token, _userLogin.Secret);
 

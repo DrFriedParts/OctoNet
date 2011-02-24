@@ -1,5 +1,5 @@
 ﻿
-namespace DropNet.Tests
+namespace OctoNet.Tests
 {
     public static class TestVariables
     {

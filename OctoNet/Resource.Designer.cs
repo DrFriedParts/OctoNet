@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DropNet {
+namespace OctoNet {
     using System;
     
     

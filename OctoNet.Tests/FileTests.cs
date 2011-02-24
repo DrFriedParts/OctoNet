@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Ploeh.AutoFixture;
 
-namespace DropNet.Tests
+namespace OctoNet.Tests
 {
     /// <summary>
     /// Summary description for UnitTest1
@@ -11,14 +11,14 @@ namespace DropNet.Tests
     [TestClass]
     public class FileTests
     {
-        DropNetClient _client;
+        OctoNetClient _client;
         Fixture fixture;
         public FileTests()
         {
             //
             // TODO: Add constructor logic here
             //
-            _client = new DropNetClient(TestVariables.ApiKey, TestVariables.ApiSecret);
+            _client = new OctoNetClient(TestVariables.ApiKey, TestVariables.ApiSecret);
             fixture = new Fixture();
         }
 

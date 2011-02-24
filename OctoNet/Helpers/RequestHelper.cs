@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using RestSharp;
 
-namespace DropNet.Helpers
+namespace OctoNet.Helpers
 {
     public class RequestHelper
     {
@@ -19,7 +19,7 @@ namespace DropNet.Helpers
         public RestRequest CreateMetadataRequest(string path)
         {
             var request = new RestRequest(Method.GET);
-            request.Resource = "{version}/metadata/dropbox{path}";
+            request.Resource = "{version}/metadata/Octopart{path}";
             request.AddParameter("version", _version, ParameterType.UrlSegment);
             request.AddParameter("path", path, ParameterType.UrlSegment);
 
@@ -29,7 +29,7 @@ namespace DropNet.Helpers
         public RestRequest CreateGetFileRequest(string path)
         {
             var request = new RestRequest(Method.GET);
-            request.Resource = "{version}/files/dropbox{path}";
+            request.Resource = "{version}/files/Octopart{path}";
             request.AddParameter("version", _version, ParameterType.UrlSegment);
             request.AddParameter("path", path, ParameterType.UrlSegment);
 
@@ -39,7 +39,7 @@ namespace DropNet.Helpers
         public RestRequest CreateUploadFileRequest(string path, string filename, byte[] fileData)
         {
             var request = new RestRequest(Method.POST);
-            request.Resource = "{version}/files/dropbox{path}";
+            request.Resource = "{version}/files/Octopart{path}";
             request.AddParameter("version", _version, ParameterType.UrlSegment);
             request.AddParameter("path", path, ParameterType.UrlSegment);
             //Need to add the "file" parameter with the file name
@@ -57,7 +57,7 @@ namespace DropNet.Helpers
             request.AddParameter("version", _version, ParameterType.UrlSegment);
 
             request.AddParameter("path", path);
-            request.AddParameter("root", "dropbox");
+            request.AddParameter("root", "Octopart");
 
             return request;
         }
@@ -70,7 +70,7 @@ namespace DropNet.Helpers
 
             request.AddParameter("from_path", fromPath);
             request.AddParameter("to_path", toPath);
-            request.AddParameter("root", "dropbox");
+            request.AddParameter("root", "Octopart");
 
             return request;
         }
@@ -83,7 +83,7 @@ namespace DropNet.Helpers
 
             request.AddParameter("from_path", fromPath);
             request.AddParameter("to_path", toPath);
-            request.AddParameter("root", "dropbox");
+            request.AddParameter("root", "Octopart");
 
             return request;
         }
@@ -135,7 +135,7 @@ namespace DropNet.Helpers
             request.AddParameter("version", _version, ParameterType.UrlSegment);
 
             request.AddParameter("path", path);
-            request.AddParameter("root", "dropbox");
+            request.AddParameter("root", "Octopart");
 
             return request;
         }

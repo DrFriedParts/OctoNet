@@ -1,12 +1,12 @@
 ﻿using System.IO;
-using DropNet.Models;
-using DropNet.Authenticators;
+using OctoNet.Models;
+using OctoNet.Authenticators;
 using RestSharp;
 using System;
 
-namespace DropNet
+namespace OctoNet
 {
-    public partial class DropNetClient
+    public partial class OctoNetClient
     {
 
         /// <summary>
@@ -18,7 +18,7 @@ namespace DropNet
         {
             if (!path.StartsWith("/")) path = "/" + path;
 
-            //This has to be here as Dropbox change their base URL between calls
+            //This has to be here as Octopart change their base URL between calls
             _restClient.BaseUrl = Resource.ApiBaseUrl;
             _restClient.Authenticator = new OAuthAuthenticator(_restClient.BaseUrl, _apiKey, _appsecret, _userLogin.Token, _userLogin.Secret);
 
@@ -29,7 +29,7 @@ namespace DropNet
 
         //TODO - Make class for this to return (instead of just a byte[])
         /// <summary>
-        /// Downloads a File from dropbox given the path
+        /// Downloads a File from Octopart given the path
         /// </summary>
         /// <param name="path">The path of the file to download</param>
         /// <param name="callback">The callback Action to perform on completion</param>
@@ -37,7 +37,7 @@ namespace DropNet
         {
             if (!path.StartsWith("/")) path = "/" + path;
 
-            //This has to be here as Dropbox change their base URL between calls
+            //This has to be here as Octopart change their base URL between calls
             _restClient.BaseUrl = Resource.ApiContentBaseUrl;
             _restClient.Authenticator = new OAuthAuthenticator(_restClient.BaseUrl, _apiKey, _appsecret, _userLogin.Token, _userLogin.Secret);
 
@@ -51,7 +51,7 @@ namespace DropNet
 #else
 
         /// <summary>
-        /// Uploads a File to Dropbox from the local file system to the specified folder
+        /// Uploads a File to Octopart from the local file system to the specified folder
         /// </summary>
         /// <param name="path">The path of the folder to upload to</param>
         /// <param name="localFile">The local file to upload</param>
@@ -70,17 +70,17 @@ namespace DropNet
 #endif
 
         /// <summary>
-        /// Uploads a File to Dropbox given the raw data.
+        /// Uploads a File to Octopart given the raw data.
         /// </summary>
         /// <param name="path">The path of the folder to upload to</param>
-        /// <param name="filename">The Name of the file to upload to dropbox</param>
+        /// <param name="filename">The Name of the file to upload to Octopart</param>
         /// <param name="fileData">The file data</param>
         /// <param name="callback">The callback Action to perform on completion</param>
         public void UploadFileAsync(string path, string filename, byte[] fileData, Action<RestResponse> callback)
         {
             if (!path.StartsWith("/")) path = "/" + path;
 
-            //This has to be here as Dropbox change their base URL between calls
+            //This has to be here as Octopart change their base URL between calls
             _restClient.BaseUrl = Resource.ApiContentBaseUrl;
             _restClient.Authenticator = new OAuthAuthenticator(_restClient.BaseUrl, _apiKey, _appsecret, _userLogin.Token, _userLogin.Secret);
 
@@ -90,7 +90,7 @@ namespace DropNet
         }
 
         /// <summary>
-        /// Deletes the file or folder from dropbox with the given path
+        /// Deletes the file or folder from Octopart with the given path
         /// </summary>
         /// <param name="path">The Path of the file or folder to delete.</param>
         /// <param name="callback">The callback Action to perform on completion</param>
@@ -98,7 +98,7 @@ namespace DropNet
         {
             if (!path.StartsWith("/")) path = "/" + path;
 
-            //This has to be here as Dropbox change their base URL between calls
+            //This has to be here as Octopart change their base URL between calls
             _restClient.BaseUrl = Resource.ApiBaseUrl;
             _restClient.Authenticator = new OAuthAuthenticator(_restClient.BaseUrl, _apiKey, _appsecret, _userLogin.Token, _userLogin.Secret);
 
@@ -108,7 +108,7 @@ namespace DropNet
         }
 
         /// <summary>
-        /// Copies a file or folder on Dropbox
+        /// Copies a file or folder on Octopart
         /// </summary>
         /// <param name="fromPath">The path to the file or folder to copy</param>
         /// <param name="toPath">The path to where the file or folder is getting copied</param>
@@ -118,7 +118,7 @@ namespace DropNet
             if (!fromPath.StartsWith("/")) fromPath = "/" + fromPath;
             if (!toPath.StartsWith("/")) toPath = "/" + toPath;
 
-            //This has to be here as Dropbox change their base URL between calls
+            //This has to be here as Octopart change their base URL between calls
             _restClient.BaseUrl = Resource.ApiBaseUrl;
             _restClient.Authenticator = new OAuthAuthenticator(_restClient.BaseUrl, _apiKey, _appsecret, _userLogin.Token, _userLogin.Secret);
 
@@ -128,7 +128,7 @@ namespace DropNet
         }
 
         /// <summary>
-        /// Moves a file or folder on Dropbox
+        /// Moves a file or folder on Octopart
         /// </summary>
         /// <param name="fromPath">The path to the file or folder to move</param>
         /// <param name="toPath">The path to where the file or folder is getting moved</param>
@@ -138,7 +138,7 @@ namespace DropNet
             if (!fromPath.StartsWith("/")) fromPath = "/" + fromPath;
             if (!toPath.StartsWith("/")) toPath = "/" + toPath;
 
-            //This has to be here as Dropbox change their base URL between calls
+            //This has to be here as Octopart change their base URL between calls
             _restClient.BaseUrl = Resource.ApiBaseUrl;
             _restClient.Authenticator = new OAuthAuthenticator(_restClient.BaseUrl, _apiKey, _appsecret, _userLogin.Token, _userLogin.Secret);
 
@@ -148,7 +148,7 @@ namespace DropNet
         }
 
         /// <summary>
-        /// Creates a folder on Dropbox
+        /// Creates a folder on Octopart
         /// </summary>
         /// <param name="path">The path to the folder to create</param>
         /// <param name="callback">The callback Action to perform on completion</param>
@@ -156,7 +156,7 @@ namespace DropNet
         {
             if (!path.StartsWith("/")) path = "/" + path;
 
-            //This has to be here as Dropbox change their base URL between calls
+            //This has to be here as Octopart change their base URL between calls
             _restClient.BaseUrl = Resource.ApiBaseUrl;
             _restClient.Authenticator = new OAuthAuthenticator(_restClient.BaseUrl, _apiKey, _appsecret, _userLogin.Token, _userLogin.Secret);
 

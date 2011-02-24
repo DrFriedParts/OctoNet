@@ -9,7 +9,7 @@
     <ProjectGuid>{06B6BC2F-94D5-456A-ABA7-F73FB28B4703}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DropNet.Tests</RootNamespace>
+    <RootNamespace>OctoNet.Tests</RootNamespace>
     <AssemblyName>DropNet.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -67,12 +67,6 @@
     <Compile Include="Helpers\RequestHelperTest.cs" />
     <Compile Include="UserTests.cs" />
     <Compile Include="TestVariables.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DropNet\DropNet.csproj">
-      <Project>{E9580EFC-6014-4D3B-82A8-5F6D57213CE4}</Project>
-      <Name>DropNet</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

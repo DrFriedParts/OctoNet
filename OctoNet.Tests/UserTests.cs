@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DropNet.Tests
+namespace OctoNet.Tests
 {
     /// <summary>
     /// Summary description for UnitTest1
@@ -8,14 +8,14 @@ namespace DropNet.Tests
     [TestClass]
     public class UserTests
     {
-        DropNetClient _client;
+        OctoNetClient _client;
 
         public UserTests()
         {
             //
             // TODO: Add constructor logic here
             //
-            _client = new DropNetClient(TestVariables.ApiKey, TestVariables.ApiSecret);
+            _client = new OctoNetClient(TestVariables.ApiKey, TestVariables.ApiSecret);
         }
 
         private TestContext testContextInstance;

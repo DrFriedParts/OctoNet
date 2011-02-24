@@ -1,10 +1,10 @@
-﻿using DropNet.Helpers;
+﻿using OctoNet.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using RestSharp;
 using Ploeh.AutoFixture;
 
-namespace DropNet.Tests
+namespace OctoNet.Tests
 {
     
     

@@ -1,11 +1,11 @@
-﻿using DropNet.Models;
+﻿using OctoNet.Models;
 using RestSharp;
 using RestSharp.Deserializers;
-using DropNet.Helpers;
+using OctoNet.Helpers;
 
-namespace DropNet
+namespace OctoNet
 {
-    public partial class DropNetClient
+    public partial class OctoNetClient
     {
         private const string _version = "0";
 
@@ -26,10 +26,10 @@ namespace DropNet
         public long DataCount { get; set; }
 
         /// <summary>
-        /// Default Constructor for the DropboxClient
+        /// Default Constructor for the OctopartClient
         /// </summary>
-        /// <param name="apiKey">The Api Key to use for the Dropbox Requests</param>
-        public DropNetClient(string apiKey, string appSecret)
+        /// <param name="apiKey">The Api Key to use for the Octopart Requests</param>
+        public OctoNetClient(string apiKey, string appSecret)
         {
             _apiKey = apiKey;
             _appsecret = appSecret;
@@ -37,7 +37,7 @@ namespace DropNet
             LoadClient();
         }
 
-        public DropNetClient(string apiKey, string appSecret, string userToken, string userSecret)
+        public OctoNetClient(string apiKey, string appSecret, string userToken, string userSecret)
         {
             _apiKey = apiKey;
             _appsecret = appSecret;
@@ -49,7 +49,7 @@ namespace DropNet
 
         private void LoadClient()
         {
-            _restClient = new RestClient(DropNet.Resource.SecureLoginBaseUrl);
+            _restClient = new RestClient(OctoNet.Resource.SecureLoginBaseUrl);
             _restClient.ClearHandlers();
             _restClient.AddHandler("*", new JsonDeserializer());
             //probly not needed...

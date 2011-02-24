@@ -5,7 +5,7 @@ using System.Text;
 using RestSharp;
 using System.Security.Cryptography;
 
-namespace DropNet.Authenticators
+namespace OctoNet.Authenticators
 {
     public class OAuthAuthenticator : IAuthenticator
     {
